@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <!-- Sostituito da `flutter build web --base-href /abbicci/` per GitHub Pages. -->
+  <base href="/abbicci-web/">
+
+  <meta charset="UTF-8">
+  <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Abbicci: giochi gratuiti per bambini per imparare a leggere e a contare. Senza account e senza pubblicità.">
+  <meta name="theme-color" content="#6EA8FB">
+
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Abbicci">
+  <link rel="apple-touch-icon" href="icons/Icon-192.png">
+  <link rel="icon" type="image/png" href="favicon.png"/>
+
+  <title>Abbicci</title>
+  <link rel="manifest" href="manifest.json">
+
+  <style>
+    html, body { margin: 0; height: 100%; background: linear-gradient(#6EA8FB, #B4D4FF); }
+    #caricamento {
+      position: fixed; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+      font-family: system-ui, sans-serif; color: #fff; transition: opacity .3s;
+    }
+    #caricamento .gufo { font-size: 84px; animation: salta 1s ease-in-out infinite; }
+    #caricamento .nome { font-size: 40px; font-weight: 800; letter-spacing: .5px; }
+    @keyframes salta { 50% { transform: translateY(-14px); } }
+  </style>
+</head>
+<body>
+  <div id="caricamento" aria-label="Caricamento">
+    <div class="gufo">🦉</div>
+    <div class="nome">Abbicci</div>
+  </div>
+  <script>
+    window.addEventListener('flutter-first-frame', function () {
+      var c = document.getElementById('caricamento');
+      if (c) { c.style.opacity = '0'; setTimeout(function () { c.remove(); }, 300); }
+    });
+  </script>
+  <script src="flutter_bootstrap.js" async></script>
+</body>
+</html>
